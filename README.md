@@ -37,7 +37,7 @@
 
 ## 📹 Demo Walkthrough
 
-🎬 **Watch Demo Video**: [Click to Watch on Google Drive](https://drive.google.com/file/d/your-video-id-here/view)
+🎬 **Watch Demo Video**: [Click to Watch on Google Drive](https://drive.google.com/file/d/1jBenpLY5WBLv6VLnZ6shxLxohKIXEVsn/view?usp=sharing)
 
 🖼️ **Screenshots**  
 ![Dashboard](screenshots/demo_main.png)  
@@ -85,24 +85,27 @@ python app.py
 ### 🧠 Sample Payloads
 
 ## 🔓 SQL Injection
-   ' OR '1'='1
+```
+' OR '1'='1
 
-   admin'--
+admin'--
 
-   ' UNION SELECT 1,2,3--
-
+' UNION SELECT 1,2,3--
+```
 ## 🦠 XSS
+```
 <script>alert('XSS')</script>
 
 <img src=x onerror=alert(1)>
 
 <svg onload=alert('XSS')>
-
+```
 ## 🎯 CSRF
+```
 Transfer page tested with/without tokens
 
 Secure form prevents unauthorized requests
-
+```
 ---
 
 ## 🎓 Learning Outcomes
