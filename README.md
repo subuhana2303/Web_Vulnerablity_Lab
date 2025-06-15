@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 python app.py
 
-## ➡️ Open your browser: http://localhost:5000
+### ➡️ Open your browser: http://localhost:9000
 🧪 Click "Init Demo Data" to populate the app and begin exploring vulnerabilities.
 
 ---
@@ -127,7 +127,6 @@ Support academic teaching and cybersecurity awareness
 
 ### 🙋🏻‍♀️ About Me
 
-```
  👩🏻 Subuhana B
  🎓 Computer Science | Security Enthusiast | Beginner-Friendly Builder
  📧 subuhanabasheer41@gmail.com
