@@ -40,7 +40,8 @@
 🎬 **Watch Demo Video**: [Click to Watch on Google Drive](https://drive.google.com/file/d/1jBenpLY5WBLv6VLnZ6shxLxohKIXEVsn/view?usp=sharing)
 
 🖼️ **Screenshots**  
-![Dashboard](screenshots/demo_main.png)  
+![Dashboard](![phone view](https://github.com/user-attachments/assets/bfe23aa6-5029-4deb-b4c6-ab23dd5f603a)
+)  
 ![XSS Attack Demo](screenshots/xss_demo.png)  
 ![CSRF Protected Transfer](screenshots/csrf_secure.png)
 
