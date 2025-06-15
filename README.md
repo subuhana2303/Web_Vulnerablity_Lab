@@ -40,10 +40,18 @@
 🎬 **Watch Demo Video**: [Click to Watch on Google Drive](https://drive.google.com/file/d/1jBenpLY5WBLv6VLnZ6shxLxohKIXEVsn/view?usp=sharing)
 
 🖼️ **Screenshots**  
-## Dashboard(![phone view](https://github.com/user-attachments/assets/bfe23aa6-5029-4deb-b4c6-ab23dd5f603a)
-)  
-![XSS Attack Demo](screenshots/xss_demo.png)  
-![CSRF Protected Transfer](screenshots/csrf_secure.png)
+
+## Dashboard
+![Screenshot 2025-06-15 175234](https://github.com/user-attachments/assets/e4f7d8df-6d47-4d94-85da-cdb09f63d014)
+## SQL injection
+![Screenshot 2025-06-15 175434](https://github.com/user-attachments/assets/2a76322a-ba6e-4d2e-ae72-c26f9444fb14)
+
+## XSS Attack Demo
+![Screenshot 2025-06-15 175811](https://github.com/user-attachments/assets/0f9de75f-50bf-43bf-8eae-9f0c87e97756)![Screenshot 2025-06-15 175838](https://github.com/user-attachments/assets/84751d2c-a772-4e1b-9472-0e28c38db08e)
+
+## CSRF Protected Transfer
+![Screenshot 2025-06-15 175917](https://github.com/user-attachments/assets/4df347c6-f9d2-4a1e-9bff-17c2fce7de95)
+
 
 ---
 
