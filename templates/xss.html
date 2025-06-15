@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block title %}XSS Demo - Web Vulnerability Lab{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-code text-warning me-3"></i>Cross-Site Scripting (XSS) Demonstration
+        </h1>
+        
+        <div class="alert alert-info" role="alert">
+            <h6 class="alert-heading">
+                <i class="fas fa-info-circle me-2"></i>About XSS
+            </h6>
+            <p class="mb-0">
+                Cross-Site Scripting (XSS) attacks inject malicious scripts into web pages viewed by other users. 
+                This can lead to session hijacking, defacement, or malicious redirects.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-bug me-2"></i>Vulnerable Comment Form
+                </h5>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('xss_vulnerable') }}" method="POST">
+                    <div class="mb-3">
+                        <label for="content_vulnerable" class="form-label">Comment:</label>
+                        <textarea class="form-control" id="content_vulnerable" name="content" 
+                                rows="3" placeholder="Enter your comment..."></textarea>
+                        <div class="form-text text-danger">
+                            Try: <code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code>
+                            <div class="mt-2">
+                                <button type="button" class="btn btn-sm btn-outline-danger me-1" onclick="document.getElementById('content_vulnerable').value = '<script>alert(\'XSS Attack!\')</script>'">Basic Alert</button>
+                                <button type="button" class="btn btn-sm btn-outline-danger me-1" onclick="document.getElementById('content_vulnerable').value = '<img src=x onerror=alert(\'Image XSS!\')>'">Image XSS</button>
+                                <button type="button" class="btn btn-sm btn-outline-danger" onclick="document.getElementById('content_vulnerable').value = '<svg onload=alert(\'SVG XSS!\')></svg>'">SVG XSS</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-paper-plane me-2"></i>Post Vulnerable Comment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card border-success">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-shield-alt me-2"></i>Secure Comment Form
+                </h5>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('xss_secure') }}" method="POST">
+                    <div class="mb-3">
+                        <label for="content_secure" class="form-label">Comment:</label>
+                        <textarea class="form-control" id="content_secure" name="content" 
+                                rows="3" placeholder="Enter your comment..."></textarea>
+                        <div class="form-text text-success">
+                            This form sanitizes input to prevent XSS
+                            <div class="mt-2">
+                                <button type="button" class="btn btn-sm btn-outline-success me-1" onclick="document.getElementById('content_secure').value = '<script>alert(\'XSS Attack!\')</script>'">Try Basic Alert</button>
+                                <button type="button" class="btn btn-sm btn-outline-success me-1" onclick="document.getElementById('content_secure').value = '<img src=x onerror=alert(\'Image XSS!\')>'">Try Image XSS</button>
+                                <button type="button" class="btn btn-sm btn-outline-success" onclick="document.getElementById('content_secure').value = '<svg onload=alert(\'SVG XSS!\')></svg>'">Try SVG XSS</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-shield-alt me-2"></i>Post Secure Comment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="fas fa-comments me-2"></i>Comments Section
+                </h5>
+                <form action="{{ url_for('xss_clear') }}" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-sm btn-outline-warning" onclick="return confirm('Clear all comments?')">
+                        <i class="fas fa-trash me-1"></i>Clear All
+                    </button>
+                </form>
+            </div>
+            <div class="card-body">
+                {% if comments %}
+                    {% for comment, username in comments %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ username }}</h6>
+                                    <div class="comment-content">
+                                        {% if comment.content.startswith('[VULNERABLE]') %}
+                                            <span class="badge bg-danger mb-2">Vulnerable Content</span>
+                                            {{ comment.content[12:]|safe }}
+                                        {% elif comment.content.startswith('[SECURE]') %}
+                                            <span class="badge bg-success mb-2">Secure Content</span>
+                                            {{ comment.content[8:] }}
+                                        {% else %}
+                                            {{ comment.content|safe }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <small class="text-muted">{{ comment.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-muted">No comments yet. Be the first to comment!</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-code me-2"></i>Code Comparison
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="text-danger">Vulnerable Code:</h6>
+                        <pre><code class="language-python"># Vulnerable: Raw content storage
+content = request.form.get('content', '')
+comment = Comment(content=content, author_id=author_id)
+db.session.add(comment)
+
+# Template renders without escaping
+# comment.content|safe</code></pre>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-success">Secure Code:</h6>
+                        <pre><code class="language-python"># Secure: HTML escape content
+import html
+content = request.form.get('content', '')
+content = html.escape(content)
+comment = Comment(content=content, author_id=author_id)
+db.session.add(comment)
+
+# Template renders with automatic escaping
+# comment.content</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-lightbulb me-2"></i>Common XSS Payloads to Try
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Basic Alerts:</h6>
+                        <ul class="list-unstyled">
+                            <li><code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code></li>
+                            <li><code>&lt;img src=x onerror=alert('XSS')&gt;</code></li>
+                            <li><code>&lt;svg onload=alert('XSS')&gt;</code></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Advanced Payloads:</h6>
+                        <ul class="list-unstyled">
+                            <li><code>&lt;script&gt;document.cookie&lt;/script&gt;</code></li>
+                            <li><code>&lt;iframe src="javascript:alert('XSS')"&gt;</code></li>
+                            <li><code>&lt;body onload=alert('XSS')&gt;</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

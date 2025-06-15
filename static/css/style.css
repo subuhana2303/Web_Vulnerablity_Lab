@@ -1,0 +1,114 @@
+/* Custom styles for Web Vulnerability Lab */
+
+.hero-section {
+    background: linear-gradient(135deg, var(--bs-dark) 0%, var(--bs-secondary) 100%);
+    border-radius: 1rem;
+    border: 1px solid var(--bs-border-color);
+}
+
+.card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.code-comparison {
+    background-color: var(--bs-dark);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.vulnerability-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.comment-content {
+    max-height: 200px;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+/* Syntax highlighting adjustments for dark theme */
+pre[class*="language-"] {
+    background: var(--bs-dark) !important;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.375rem;
+}
+
+code[class*="language-"] {
+    color: var(--bs-light) !important;
+}
+
+/* Custom alert styles */
+.alert-code {
+    background-color: var(--bs-dark);
+    border: 1px solid var(--bs-border-color);
+    color: var(--bs-light);
+}
+
+/* Form enhancements */
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* Button group styling */
+.btn-group .btn.active {
+    box-shadow: 0 0 0 0.125rem rgba(var(--bs-primary-rgb), 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 1rem !important;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--bs-secondary);
+    border-radius: 50%;
+    border-top-color: var(--bs-primary);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Code block improvements */
+pre {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bs-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bs-secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bs-primary);
+}

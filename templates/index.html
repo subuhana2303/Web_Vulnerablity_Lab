@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="hero-section text-center py-5 mb-5">
+            <h1 class="display-4 fw-bold mb-4">
+                <i class="fas fa-shield-alt text-warning me-3"></i>
+                Web Vulnerability Lab
+            </h1>
+            <p class="lead mb-4">
+                Learn about common web security vulnerabilities through interactive demonstrations
+            </p>
+            <div class="alert alert-warning" role="alert">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                <strong>Educational Only:</strong> This platform is designed for learning purposes. 
+                Do not use these techniques on systems you don't own.
+            </div>
+            
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="card border-success">
+                        <div class="card-body text-center">
+                            <i class="fas fa-play-circle text-success fa-2x mb-2"></i>
+                            <h6>Ready to Start?</h6>
+                            <p class="small mb-2">Initialize demo data for testing</p>
+                            <a href="{{ url_for('init_demo_data') }}" class="btn btn-success btn-sm">
+                                <i class="fas fa-database me-1"></i>Initialize Demo Data
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-info">
+                        <div class="card-body text-center">
+                            <i class="fas fa-graduation-cap text-info fa-2x mb-2"></i>
+                            <h6>Learning Objectives</h6>
+                            <p class="small mb-2">Understand vulnerability types and prevention</p>
+                            <span class="badge bg-info">Hands-on Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 border-danger">
+            <div class="card-header bg-danger text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-database me-2"></i>SQL Injection
+                </h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Learn how SQL injection attacks work and how to prevent them using parameterized queries.
+                </p>
+                <h6 class="fw-bold">What you'll learn:</h6>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check text-success me-2"></i>Union-based attacks</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Authentication bypass</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Parameterized queries</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Input validation</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="{{ url_for('sql_injection') }}" class="btn btn-danger w-100">
+                    <i class="fas fa-play me-2"></i>Try SQL Injection Demo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 border-warning">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-code me-2"></i>Cross-Site Scripting (XSS)
+                </h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Understand how XSS attacks work and learn proper input sanitization techniques.
+                </p>
+                <h6 class="fw-bold">What you'll learn:</h6>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check text-success me-2"></i>Reflected XSS</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Stored XSS</li>
+                    <li><i class="fas fa-check text-success me-2"></i>HTML escaping</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Content Security Policy</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="{{ url_for('xss') }}" class="btn btn-warning text-dark w-100">
+                    <i class="fas fa-play me-2"></i>Try XSS Demo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 border-info">
+            <div class="card-header bg-info text-dark">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-user-shield me-2"></i>Cross-Site Request Forgery (CSRF)
+                </h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Discover how CSRF attacks work and implement proper token-based protection.
+                </p>
+                <h6 class="fw-bold">What you'll learn:</h6>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check text-success me-2"></i>State-changing requests</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Token validation</li>
+                    <li><i class="fas fa-check text-success me-2"></i>SameSite cookies</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Referer validation</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="{{ url_for('csrf') }}" class="btn btn-info text-dark w-100">
+                    <i class="fas fa-play me-2"></i>Try CSRF Demo
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-info-circle me-2"></i>How to Use This Lab
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="fw-bold">Getting Started:</h6>
+                        <ol>
+                            <li>Click "Init Demo Data" to set up sample data</li>
+                            <li>Choose a vulnerability type to explore</li>
+                            <li>Try both vulnerable and secure implementations</li>
+                            <li>Compare the code differences</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="fw-bold">Safety Features:</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Sandboxed environment</li>
+                            <li><i class="fas fa-check text-success me-2"></i>No real data at risk</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Educational focus</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Clear code examples</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

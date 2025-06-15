@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block title %}SQL Injection Demo - Web Vulnerability Lab{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-database text-danger me-3"></i>SQL Injection Demonstration
+        </h1>
+        
+        <div class="alert alert-info" role="alert">
+            <h6 class="alert-heading">
+                <i class="fas fa-info-circle me-2"></i>About SQL Injection
+            </h6>
+            <p class="mb-0">
+                SQL injection is a code injection technique that exploits security vulnerabilities 
+                in an application's software by inserting malicious SQL statements into entry fields.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="btn-group w-100" role="group">
+            <a href="{{ url_for('sql_injection_vulnerable') }}" 
+               class="btn btn-danger {% if mode == 'vulnerable' %}active{% endif %}">
+                <i class="fas fa-bug me-2"></i>Vulnerable Version
+            </a>
+            <a href="{{ url_for('sql_injection_secure') }}" 
+               class="btn btn-success {% if mode == 'secure' %}active{% endif %}">
+                <i class="fas fa-shield-alt me-2"></i>Secure Version
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-search me-2"></i>User Search
+                </h5>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username" 
+                               placeholder="Enter username to search">
+                        <div class="form-text">
+                            {% if mode == 'vulnerable' %}
+                                <span class="text-danger">Try: <code>' OR '1'='1</code></span>
+                            {% else %}
+                                <span class="text-success">This version is protected against SQL injection</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search me-2"></i>Search
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        {% if query %}
+        <div class="card mt-4">
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="fas fa-code me-2"></i>Executed Query
+                </h6>
+            </div>
+            <div class="card-body">
+                <pre><code class="language-sql">{{ query }}</code></pre>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="alert alert-danger mt-3" role="alert">
+            <h6 class="alert-heading">Database Error:</h6>
+            <code>{{ error }}</code>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-users me-2"></i>Search Results
+                </h5>
+            </div>
+            <div class="card-body">
+                {% if users %}
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in users %}
+                                <tr>
+                                    <td>{{ user.id }}</td>
+                                    <td>{{ user.username }}</td>
+                                    <td>{{ user.email }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <p class="text-muted">No users found. Try searching for a username.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'components/code_comparison.html' %}
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-lightbulb me-2"></i>Common SQL Injection Payloads to Try
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Authentication Bypass:</h6>
+                        <ul class="list-unstyled">
+                            <li><code>' OR '1'='1</code></li>
+                            <li><code>' OR 1=1--</code></li>
+                            <li><code>admin'--</code></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Union-based:</h6>
+                        <ul class="list-unstyled">
+                            <li><code>' UNION SELECT 1,2,3--</code></li>
+                            <li><code>' UNION SELECT null,username,password FROM user--</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
