@@ -1,69 +1,151 @@
-# Web Vulnerability Lab
+# 🛡️ Web Vulnerability Lab — Learn, Simulate & Secure the Web
 
-An interactive educational platform demonstrating common web security vulnerabilities and their prevention methods.
+[![Made by Subuhana B](https://img.shields.io/badge/Made%20By-Subuhana%20B-blueviolet)](https://github.com/subuhana2303)  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  [![Backend](https://img.shields.io/badge/Backend-Flask-blue)]()  [![Database](https://img.shields.io/badge/Database-PostgreSQL-blueviolet)]()  [![Hosted on Replit](https://img.shields.io/badge/Hosted%20on-Replit-black?logo=replit)](https://replit.com/@subuhana2303/web-vulnerability-lab)
 
-## Features
+> 🔐 A safe and interactive sandbox to learn how common web vulnerabilities work — and how to defend against them. Built with Flask, PostgreSQL, and Bootstrap.
 
-### SQL Injection Demonstration
-- Interactive forms showing vulnerable vs secure database queries
-- Real-time query execution with results
-- Common payload examples and prevention techniques
+---
 
-### Cross-Site Scripting (XSS) Demo
-- Vulnerable and secure comment systems
-- Multiple XSS payload types (script, image, SVG)
-- HTML escaping demonstration
+## 🧩 Overview
 
-### Cross-Site Request Forgery (CSRF) Protection
-- Banking simulation with vulnerable and secure transfers
-- CSRF token implementation
-- Attack simulation examples
+**Web Vulnerability Lab** is a security-focused educational platform that demonstrates real-world attack scenarios in a safe environment. Learn how malicious users exploit vulnerabilities like SQL Injection, Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF), and explore secure coding strategies to prevent them.
 
-## Quick Start
+---
 
-1. Click "Init Demo Data" to set up sample data
-2. Navigate to any vulnerability demonstration
-3. Try both vulnerable and secure implementations
-4. Compare code differences in the provided examples
+## 🌟 Key Features
 
-## Educational Use
+✅ SQL Injection (Vulnerable vs Secure Login)  
+✅ Cross-Site Scripting (XSS via form input)  
+✅ Cross-Site Request Forgery (Simulated Banking Transfer)  
+✅ Real-time form input, execution logs, and code comparisons  
+✅ One-click "Init Demo Data" setup for instant testing  
+✅ Clean UI with Bootstrap dark mode  
 
-This platform is designed for:
-- Web security education
-- Penetration testing training
-- Secure coding demonstrations
-- Academic coursework
+---
 
-## Safety Features
+## 🛠️ Tech Stack
 
-- Sandboxed environment
-- No real financial data
-- Educational-only implementations
-- Clear vulnerability warnings
+| Layer        | Technology                            |
+|--------------|----------------------------------------|
+| Backend      | Python Flask, SQLAlchemy ORM           |
+| Frontend     | Jinja2 + Bootstrap 5 (Dark Theme)      |
+| Database     | PostgreSQL (default), SQLite (fallback)|
+| Security     | CSRF Protection, Escaped Templates, Input Sanitization |
+| Hosting      | Replit (Live Demo)                     |
 
-## Technical Stack
+---
 
-- **Backend**: Python Flask with SQLAlchemy
-- **Database**: PostgreSQL
-- **Frontend**: Bootstrap 5 with dark theme
-- **Security**: Parameterized queries, HTML escaping, CSRF tokens
+## 📹 Demo Walkthrough
 
-## Demo Payloads
+🎬 **Watch Demo Video**: [Click to Watch on Google Drive](https://drive.google.com/file/d/your-video-id-here/view)
 
-### SQL Injection
-- `' OR '1'='1` - Authentication bypass
-- `' UNION SELECT 1,2,3--` - Union-based attack
-- `admin'--` - Comment injection
+🖼️ **Screenshots**  
+![Dashboard](screenshots/demo_main.png)  
+![XSS Attack Demo](screenshots/xss_demo.png)  
+![CSRF Protected Transfer](screenshots/csrf_secure.png)
 
-### XSS
-- `<script>alert('XSS')</script>` - Basic script injection
-- `<img src=x onerror=alert('XSS')>` - Image-based XSS
-- `<svg onload=alert('XSS')></svg>` - SVG XSS
+---
 
-### CSRF
-- Use the vulnerable form without protection
-- Compare with secure token-protected form
+## 📁 Project Structure
 
-## Warning
+```
+WEB-VULNERABILITY-LAB/
+├── app.py # Main Flask app
+├── models.py # Database models
+├── routes.py # All route logic
+├── templates/ # HTML Templates (Jinja2)
+├── static/ # CSS/JS files
+├── screenshots/ # Screenshots for demo
+├── requirements.txt # Dependencies
+└── README.md
 
-This tool is for educational purposes only. Do not use these techniques on systems you do not own or have explicit permission to test.
+```
+
+---
+
+## 🚀 Getting Started Locally
+
+### 1️⃣ Clone the Repository
+
+git clone https://github.com/subuhana2303/web-vulnerability-lab.git
+cd web-vulnerability-lab
+
+### 2️⃣ Install Dependencies
+
+pip install -r requirements.txt
+
+### 3️⃣ Run the Flask App
+
+python app.py
+
+## ➡️ Open your browser: http://localhost:5000
+🧪 Click "Init Demo Data" to populate the app and begin exploring vulnerabilities.
+
+---
+### 🧠 Sample Payloads
+
+## 🔓 SQL Injection
+   ' OR '1'='1
+
+   admin'--
+
+   ' UNION SELECT 1,2,3--
+
+## 🦠 XSS
+<script>alert('XSS')</script>
+
+<img src=x onerror=alert(1)>
+
+<svg onload=alert('XSS')>
+
+## 🎯 CSRF
+Transfer page tested with/without tokens
+
+Secure form prevents unauthorized requests
+
+---
+
+## 🎓 Learning Outcomes
+Understand the mechanism behind common vulnerabilities
+
+Differentiate between insecure and secure coding practices
+
+Get hands-on with Flask, HTML templating, and security defenses
+
+Learn how CSRF tokens and HTML escaping protect users
+
+## 💡 Motivation
+This project was created to:
+
+Help beginners and students learn web application security
+
+Enable safe experimentation with real-world attacks
+
+Support academic teaching and cybersecurity awareness
+
+---
+
+### 🙋🏻‍♀️ About Me
+# 👩🏻 Subuhana B
+# 🎓 Computer Science | Security Enthusiast | Beginner-Friendly Builder
+# 📧 subuhanabasheer41@gmail.com
+# 🌐 GitHub: @subuhana2303
+
+---
+## 🤝 Contributing
+Pull requests and suggestions are welcome!
+If you'd like to contribute enhancements, please fork the repo and submit a PR.
+For feature ideas or bug reports, feel free to open an issue.
+
+---
+
+## ⚠️ Disclaimer
+This project is for educational use only.
+Never use these techniques in unauthorized environments. Always test within legal, ethical, and permitted boundaries.
+
+---
+## 📄 License
+This project is licensed under the MIT License.
+You are free to fork, use, and build on it with proper credit.
+
+---
