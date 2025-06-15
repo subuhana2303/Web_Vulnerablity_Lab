@@ -45,20 +45,13 @@
 ![Screenshot 2025-06-15 175234](https://github.com/user-attachments/assets/e4f7d8df-6d47-4d94-85da-cdb09f63d014)
 
 ## SQL Injection  
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/2a76322a-ba6e-4d2e-ae72-c26f9444fb14" alt="SQL Injection" width="48%">
-</div>
+![image](https://github.com/user-attachments/assets/a44deb0d-39dd-47e2-b68c-7bb841ae64f6)
 
 ## XSS Attack Demo  
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/0f9de75f-50bf-43bf-8eae-9f0c87e97756" alt="XSS Attack 1" width="48%">
-  <img src="https://github.com/user-attachments/assets/84751d2c-a772-4e1b-9472-0e28c38db08e" alt="XSS Attack 2" width="48%">
-</div>
+![image](https://github.com/user-attachments/assets/84bd38eb-4dcf-495b-ba5d-bffe3f300a61)
 
 ## CSRF Protected Transfer  
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/4df347c6-f9d2-4a1e-9bff-17c2fce7de95" alt="CSRF Transfer" width="48%">
-</div>
+
 
 
 
