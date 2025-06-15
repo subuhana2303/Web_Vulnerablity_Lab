@@ -1,6 +1,6 @@
 # 🛡️ Web Vulnerability Lab — Learn, Simulate & Secure the Web
 
-[![Made by Subuhana B](https://img.shields.io/badge/Made%20By-Subuhana%20B-blueviolet)](https://github.com/subuhana2303)  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  [![Backend](https://img.shields.io/badge/Backend-Flask-blue)]()  [![Database](https://img.shields.io/badge/Database-PostgreSQL-blueviolet)]()  [![Hosted on Replit](https://img.shields.io/badge/Hosted%20on-Replit-black?logo=replit)](https://replit.com/@subuhana2303/web-vulnerability-lab)
+[![Made by Subuhana B](https://img.shields.io/badge/Made%20By-Subuhana%20B-blueviolet)](https://github.com/subuhana2303)  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  [![Backend](https://img.shields.io/badge/Backend-Flask-blue)]()  [![Database](https://img.shields.io/badge/Database-PostgreSQL-blueviolet)]() 
 
 > 🔐 A safe and interactive sandbox to learn how common web vulnerabilities work — and how to defend against them. Built with Flask, PostgreSQL, and Bootstrap.
 
