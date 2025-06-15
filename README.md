@@ -126,10 +126,12 @@ Support academic teaching and cybersecurity awareness
 ---
 
 ### 🙋🏻‍♀️ About Me
-# 👩🏻 Subuhana B
-# 🎓 Computer Science | Security Enthusiast | Beginner-Friendly Builder
-# 📧 subuhanabasheer41@gmail.com
-# 🌐 GitHub: @subuhana2303
+
+```
+ 👩🏻 Subuhana B
+ 🎓 Computer Science | Security Enthusiast | Beginner-Friendly Builder
+ 📧 subuhanabasheer41@gmail.com
+ 🌐 GitHub: @subuhana2303
 
 ---
 ## 🤝 Contributing
