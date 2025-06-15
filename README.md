@@ -88,8 +88,7 @@ pip install -r requirements.txt
 ### 3️⃣ Run the Flask App
 
 python app.py
-
-### ➡️ Open your browser: http://localhost:9000
+➡️ Open your browser: http://localhost:9000
 🧪 Click "Init Demo Data" to populate the app and begin exploring vulnerabilities.
 
 ---
