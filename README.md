@@ -31,7 +31,7 @@
 | Frontend     | Jinja2 + Bootstrap 5 (Dark Theme)      |
 | Database     | PostgreSQL (default), SQLite (fallback)|
 | Security     | CSRF Protection, Escaped Templates, Input Sanitization |
-| Hosting      | Replit (Live Demo)                     |
+
 
 ---
 
