@@ -39,18 +39,27 @@
 
 🎬 **Watch Demo Video**: [Click to Watch on Google Drive](https://drive.google.com/file/d/1jBenpLY5WBLv6VLnZ6shxLxohKIXEVsn/view?usp=sharing)
 
-🖼️ **Screenshots**  
+## 🖼️ Screenshots  
 
-## Dashboard
+## Dashboard  
 ![Screenshot 2025-06-15 175234](https://github.com/user-attachments/assets/e4f7d8df-6d47-4d94-85da-cdb09f63d014)
-## SQL injection
-![Screenshot 2025-06-15 175434](https://github.com/user-attachments/assets/2a76322a-ba6e-4d2e-ae72-c26f9444fb14)
 
-## XSS Attack Demo
-![Screenshot 2025-06-15 175811](https://github.com/user-attachments/assets/0f9de75f-50bf-43bf-8eae-9f0c87e97756)![Screenshot 2025-06-15 175838](https://github.com/user-attachments/assets/84751d2c-a772-4e1b-9472-0e28c38db08e)
+## SQL Injection  
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2a76322a-ba6e-4d2e-ae72-c26f9444fb14" alt="SQL Injection" width="48%">
+</div>
 
-## CSRF Protected Transfer
-![Screenshot 2025-06-15 175917](https://github.com/user-attachments/assets/4df347c6-f9d2-4a1e-9bff-17c2fce7de95)
+## XSS Attack Demo  
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0f9de75f-50bf-43bf-8eae-9f0c87e97756" alt="XSS Attack 1" width="48%">
+  <img src="https://github.com/user-attachments/assets/84751d2c-a772-4e1b-9472-0e28c38db08e" alt="XSS Attack 2" width="48%">
+</div>
+
+## CSRF Protected Transfer  
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/4df347c6-f9d2-4a1e-9bff-17c2fce7de95" alt="CSRF Transfer" width="48%">
+</div>
+
 
 
 ---
