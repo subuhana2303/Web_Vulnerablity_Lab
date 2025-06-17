@@ -45,7 +45,7 @@
 ![Screenshot 2025-06-15 175234](https://github.com/user-attachments/assets/e4f7d8df-6d47-4d94-85da-cdb09f63d014)
 
 ## SQL Injection  
-![image](https://github.com/user-attachments/assets/a44deb0d-39dd-47e2-b68c-7bb841ae64f6)
+![sql](https://github.com/user-attachments/assets/eb798da1-a75e-4658-adc4-654f07f60842)
 
 ## XSS Attack Demo  
 ![image](https://github.com/user-attachments/assets/84bd38eb-4dcf-495b-ba5d-bffe3f300a61)
